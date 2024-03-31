@@ -1,0 +1,12 @@
+#编写一个函数来查找字符串数组中的最长公共前缀。
+#如果不存在公共前缀，返回空字符串 ""。
+#先找出数组中最小和最大的字符串，最长的公共前缀则为这两个字符串的公共前缀
+class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        str0 = min(strs)
+        str1 = max(strs)
+        for i in range(len(str0)):
+            if str0[i] != str1[i]:
+                return str0[:i]
+        return str0
+        if not strs: return ""
